@@ -44,10 +44,8 @@ Vue.component('change-map2', {
 });
 
 var newmap = [];
-var interval = "";
-var interval2 = "";
 var map = new Vue ({
-	el: '#grid',
+	el: '#map-universe',
 	data: {
 		newUniverse: newmap,
 		isShowCreateMap: false,
@@ -56,8 +54,8 @@ var map = new Vue ({
 		isShowBtnChangeMap: false,
 		isShowBtnCreateMap: true,
 		isAutonext: false,
-		autoclick1: interval,
-        autoClick2: interval2
+		autoclick1: "",
+        autoClick2: ""
 
 	},
 
