@@ -1,6 +1,6 @@
-# learning-component-vuejs-game-of-life
-b1: Run file life.html
-b2: click button Create map
-b3: click button Next map
-b4: choose Auto next or Next map continue
-b5: choose Stop to stop Auto next map
+## learning-component-vuejs-game-of-life
+**B1**: Run file life.html  
+**B2**: click button Create map  
+**B3**: click button Next map  
+**B4**: choose Auto next or Next map continue  
+**B5**: choose Stop to stop Auto next map  
