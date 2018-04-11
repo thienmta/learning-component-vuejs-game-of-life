@@ -1,0 +1,30 @@
+#grid {
+  float: left;
+}
+
+.clear {
+  clear: both;
+}
+
+.showMap {
+  margin-bottom: 10px;
+}
+
+button{
+  margin-bottom: 5px;
+}
+
+.xxx-1 {
+  background-color: white;  /*#231475*/
+  width: 6px;
+  height: 6px;
+  border: solid 1px #a25641;
+  float: left;
+}
+
+.xxx-0 {
+  background-color: #a25641;
+  width: 6px;
+  height: 6px;
+  float: left;
+}
