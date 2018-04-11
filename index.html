@@ -9,15 +9,31 @@
 <body>
 	<div id="map-universe">
 
-		<div>
-			<h1>Map universe</h1>
+		<div style="float: left; margin-top: 10px; margin-right: 10px;">
+			<create-map v-if="isShowCreateMap" :prop="newMapUniverse"></create-map>
+
+			<change-map @change="changeUniverseMapNumber" v-if="isShowChangeMap" :propchange="ChangenewMapUniverse"></change-map>
+
+			<change-map2 @change2="changeUniverseMapNumber2" v-if="isShowChangeMap2" :propchange2="ChangenewMapUniverse"></change-map2>
 		</div>
 
-		<create-map v-if="isShowCreateMap" :prop="newMapUniverse"></create-map>
+		<div style="float: left; margin-top: 35px; margin-right: 10px;">
+			<child-map @change="changeUniverseMapNumber" v-if="isShowChildMap" :propchild="ChangenewMapUniverse" :x=50 :y=50></child-map>
 
-		<change-map @change="changeUniverseMapNumber" v-if="isShowChangeMap" :propchange="ChangenewMapUniverse"></change-map>
+			<child-map2 @change2="changeUniverseMapNumber2" v-if="isShowChildMap2" :propchild2="ChangenewMapUniverse" :x=50 :y=50></child-map2>
+		</div>
 
-		<change-map2 @change2="changeUniverseMapNumber2" v-if="isShowChangeMap2" :propchange2="ChangenewMapUniverse"></change-map2>
+		<div style="float: left; margin-top: 35px; margin-right: 10px;">
+			<child-map @change="changeUniverseMapNumber" v-if="isShowChildMap" :propchild="ChangenewMapUniverse" :x=30 :y=30></child-map>
+
+			<child-map2 @change2="changeUniverseMapNumber2" v-if="isShowChildMap2" :propchild2="ChangenewMapUniverse" :x=30 :y=30></child-map2>
+		</div>
+
+		<div style="float: left; margin-top: 35px; margin-right: 10px; ma">
+			<child-map @change="changeUniverseMapNumber" v-if="isShowChildMap" :propchild="ChangenewMapUniverse" :x=10 :y=10></child-map>
+
+			<child-map2 @change2="changeUniverseMapNumber2" v-if="isShowChildMap2" :propchild2="ChangenewMapUniverse" :x=10 :y=10></child-map2>
+		</div>
 
 	</div>
 
