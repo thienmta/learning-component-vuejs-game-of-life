@@ -1,5 +1,6 @@
 #map-universe {
   float: left;
+  margin-left: 10px;
 }
 
 .clear {
@@ -15,15 +16,15 @@ button{
 }
 
 .status-1 {
-  background-color: white;  /*#231475*/
+  background-color: #59fb09;  /*#231475*/
   width: 6px;
   height: 6px;
-  border: solid 1px #a25641;
+  border: solid 1px #5c59d0d6;
   float: left;
 }
 
 .status-0 {
-  background-color: #a25641;
+  background-color: #ffee00;
   width: 6px;
   height: 6px;
   float: left;
