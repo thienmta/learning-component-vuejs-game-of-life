@@ -3,7 +3,7 @@ Vue.component('create-map',{
 	template:`
 				<div>
 					<div v-for="(item, index) in prop">
-			            <div v-for="i in 70" v-bind:class="'xxx-' + item[i-1]"></div>
+			            <div v-for="i in 70" v-bind:class="'status-' + item[i-1]"></div>
 			        </div>
 				</div>
 			`
@@ -15,7 +15,7 @@ Vue.component('change-map', {
 				<div>
 					<button id="btn1" v-on:click="changemap">Next map</button>
 					<div v-for="(item, index) in propchange">
-			            <div v-for="i in 70" v-bind:class="'xxx-' + item[i-1]"></div>
+			            <div v-for="i in 70" v-bind:class="'status-' + item[i-1]"></div>
 			        </div>
 				</div>
 			`,
@@ -32,7 +32,7 @@ Vue.component('change-map2', {
 				<div>
 					<button id="btn2" v-on:click="changemap2">Next map</button>
 					<div v-for="(item, index) in propchange2">
-			            <div v-for="i in 70" v-bind:class="'xxx-' + item[i-1]"></div>
+			            <div v-for="i in 70" v-bind:class="'status-' + item[i-1]"></div>
 			        </div>
 				</div>
 			`,

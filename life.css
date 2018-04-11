@@ -14,7 +14,7 @@ button{
   margin-bottom: 5px;
 }
 
-.xxx-1 {
+.status-1 {
   background-color: white;  /*#231475*/
   width: 6px;
   height: 6px;
@@ -22,7 +22,7 @@ button{
   float: left;
 }
 
-.xxx-0 {
+.status-0 {
   background-color: #a25641;
   width: 6px;
   height: 6px;
