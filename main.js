@@ -33,7 +33,7 @@ Vue.component('child-map',{
     template: `
                 <div>
                     <div v-for="(item, index) in childMapUniverse">
-                        <div v-for="i in x" v-bind:class="'status-' + item[i-1]"></div>
+                        <div v-for="i in y" v-bind:class="'status-' + item[i-1]"></div>
                     </div>
                 </div>
             `
@@ -63,7 +63,7 @@ Vue.component('child-map2',{
     template: `
                 <div>
                     <div v-for="(item, index) in childMapUniverse2">
-                        <div v-for="i in x" v-bind:class="'status-' + item[i-1]"></div>
+                        <div v-for="i in y" v-bind:class="'status-' + item[i-1]"></div>
                     </div>
                 </div>
             `
