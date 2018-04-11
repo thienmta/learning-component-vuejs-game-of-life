@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="life.css">
+    <script type="text/javascript" src="vue.js"></script>
+</head>
+<body>
+	<div id="map-universe">
+
+		<div>
+			<h1>Map universe</h1>
+		</div>
+
+		<create-map v-if="isShowCreateMap" :prop="newMapUniverse"></create-map>
+
+		<change-map @change="changeUniverseMapNumber" v-if="isShowChangeMap" :propchange="ChangenewMapUniverse"></change-map>
+
+		<change-map2 @change2="changeUniverseMapNumber2" v-if="isShowChangeMap2" :propchange2="ChangenewMapUniverse"></change-map2>
+
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
