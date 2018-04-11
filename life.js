@@ -115,10 +115,15 @@ var map = new Vue ({
 
         autoClick: function () {
             this.autoclick1 = setInterval(function() {
-                document.getElementById('btn1').click();  
+                if(document.getElementById('btn1')!== null){
+                    document.getElementById('btn1').click();  
+                }
+                
             }, 100);
             this.autoclick2 = setInterval(function() {
-                document.getElementById('btn2').click();  
+                if(document.getElementById('btn2')!== null){
+                    document.getElementById('btn2').click();  
+                }
             }, 100);
         },
 
