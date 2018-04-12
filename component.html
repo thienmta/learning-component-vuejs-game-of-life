@@ -13,11 +13,15 @@
 			<div>
 				<h1>Map universe</h1>
 			</div>
-			<create-map :prop="newMapUniverse"></create-map>
+			<!-- <create-map :prop="newMapUniverse"></create-map> -->
 		</div>
 		
-		<div style="margin-top: 10px;">
+		<!-- <div>
 			<row-map :x="0" :proprow="newUniverse"></row-map>
+		</div> -->
+
+		<div style="margin-top: 10px;">
+			<universe-map :propuniverse="newMapUniverse"></universe-map>
 		</div>
 
 	</div>

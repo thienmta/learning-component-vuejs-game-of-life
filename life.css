@@ -30,33 +30,3 @@ button{
   height: 6px;
   float: left;
 }
-
-.xxx-1 {
-  background-color: red;  /*#231475*/
-  width: 6px;
-  height: 6px;
-  border: solid 1px black;
-  float: left;
-}
-
-.xxx-0 {
-  background-color: black;
-  width: 6px;
-  height: 6px;
-  float: left;
-}
-
-.yyy-1 {
-  background-color: #3402f1;  /*#231475*/
-  width: 6px;
-  height: 6px;
-  border: solid 1px #00ff04;
-  float: left;
-}
-
-.yyy-0 {
-  background-color: #00ff04;
-  width: 6px;
-  height: 6px;
-  float: left;
-}

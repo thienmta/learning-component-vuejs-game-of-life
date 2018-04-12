@@ -3,7 +3,18 @@ Vue.component('create-map',{
     template:`
                 <div>
                     <div v-for="(item, index) in prop">
-                        <div v-for="i in 70" v-bind:class="'status-' + item[i-1]"></div>
+                        <div v-for="i in 50" v-bind:class="'status-' + item[i-1]"></div>
+                    </div>
+                </div>
+            `
+});
+
+Vue.component('universe-map', {
+    props: ['propuniverse'],
+    template: `
+                <div>
+                    <div v-for="a in 50"  style="float: left;">
+                        <row-map :x="a-1" :proprow="propuniverse"></row-map>
                     </div>
                 </div>
             `
@@ -14,7 +25,7 @@ Vue.component('row-map', {
     methods: {
         showRowMap: function () {
             var rowmap = [];
-            for (var j = 0; j < 70; j++) {
+            for (var j = 0; j < 50; j++) {
                 rowmap[j] = this.proprow[this.x][j];
             }
             return rowmap;
@@ -29,14 +40,8 @@ Vue.component('row-map', {
 
     template: `
                 <div>
-                    <div>
-                        <div v-for="i in 70" v-bind:class="'xxx-' + showRowMapUniver[i-1]"></div>
-                    </div>
-
-                    <div>
-                        <div v-for="i in 70">
-                            <cell-map :x="i-1" :propcell="showRowMapUniver"></cell-map>
-                        </div>
+                    <div v-for="i in 50">
+                        <cell-map :x="i-1" :propcell="showRowMapUniver"></cell-map>
                     </div>
                 </div>
             `
@@ -47,7 +52,7 @@ Vue.component('cell-map', {
     methods: {
         showCellMap: function () {
             var cellmap = "";
-            for (var j = 0; j < 70; j++) {
+            for (var j = 0; j < 50; j++) {
                 cellmap = this.propcell[this.x];
             }
             return cellmap;
@@ -62,7 +67,7 @@ Vue.component('cell-map', {
 
     template: `
                 <div>
-                    <div v-bind:class="'yyy-' + showCellMapUniver"></div>
+                    <div v-bind:class="'status-' + showCellMapUniver"></div>
                 </div>
             `
 });
@@ -84,9 +89,9 @@ var map = new Vue ({
 
     methods: {
         addNewMap: function() {
-            for (var i = 0 ; i < 70; i++) {
+            for (var i = 0 ; i < 50; i++) {
                 this.newUniverse[i] = [];
-                for (var j = 0; j < 70; j++) {
+                for (var j = 0; j < 50; j++) {
                     this.newUniverse[i][j] = Math.round(Math.random());
                 }
             }
@@ -94,7 +99,7 @@ var map = new Vue ({
         },
 
         getValueOfCell: function (x, y) {
-            if (x < 0 || x >= 70 || y < 0 || y >= 70) {
+            if (x < 0 || x >= 50 || y < 0 || y >= 50) {
                 return 0;
             }
             else {
@@ -120,8 +125,8 @@ var map = new Vue ({
             this.isShowCreateMap = false;
             this.isShowChildMap2 = true;
             this.isShowChildMap = false;
-            for (var i = 0 ; i < 70; i++) {
-                for (var j = 0; j < 70; j++) {
+            for (var i = 0 ; i < 50; i++) {
+                for (var j = 0; j < 50; j++) {
                     this.calculateCellState(i, j);
                 }
             }
@@ -134,8 +139,8 @@ var map = new Vue ({
             this.isShowCreateMap = false;
             this.isShowChildMap = true;
             this.isShowChildMap2 = false;
-            for (var i = 0 ; i < 70; i++) {
-                for (var j = 0; j < 70; j++) {
+            for (var i = 0 ; i < 50; i++) {
+                for (var j = 0; j < 50; j++) {
                     this.calculateCellState(i, j);
                 }
             }
@@ -149,8 +154,8 @@ var map = new Vue ({
         },
 
         universeMapNumber: function () {
-            for (var i = 0 ; i < 70; i++) {
-                for (var j = 0; j < 70; j++) {
+            for (var i = 0 ; i < 50; i++) {
+                for (var j = 0; j < 50; j++) {
                     this.calculateCellState(i, j);
                 }
             }
