@@ -10,18 +10,60 @@ Vue.component('create-map',{
 });
 
 Vue.component('row-map', {
-    props: ['proprow'],
+    props: ['proprow', 'x'],
+    methods: {
+        showRowMap: function () {
+            var rowmap = [];
+            for (var j = 0; j < 70; j++) {
+                rowmap[j] = this.proprow[this.x][j];
+            }
+            return rowmap;
+        }
+    },
+
+    computed: {
+        showRowMapUniver: function () {
+            return this.showRowMap();
+        }
+    },
+
     template: `
-                <div v-for="item in proprow">
-                    <cell-map v-bind:propcell="item"></cell-map>
+                <div>
+                    <div>
+                        <div v-for="i in 70" v-bind:class="'xxx-' + showRowMapUniver[i-1]"></div>
+                    </div>
+
+                    <div>
+                        <div v-for="i in 70">
+                            <cell-map :x="i-1" :propcell="showRowMapUniver"></cell-map>
+                        </div>
+                    </div>
                 </div>
             `
 });
 
 Vue.component('cell-map', {
-    props: ['propcell'],
+    props: ['propcell', 'x'],
+    methods: {
+        showCellMap: function () {
+            var cellmap = "";
+            for (var j = 0; j < 70; j++) {
+                cellmap = this.propcell[this.x];
+            }
+            return cellmap;
+        }
+    },
+
+    computed: {
+        showCellMapUniver: function () {
+            return this.showCellMap();
+        }
+    },
+
     template: `
-                <div v-for="i in 70" v-bind:class="'status-' + propcell[i-1]"></div>
+                <div>
+                    <div v-bind:class="'yyy-' + showCellMapUniver"></div>
+                </div>
             `
 });
 

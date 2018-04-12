@@ -9,12 +9,16 @@
 <body>
 	<div id="map-universe">
 
-		<div>
-			<h1>Map universe</h1>
+		<div style="margin-bottom: 10px;">
+			<div>
+				<h1>Map universe</h1>
+			</div>
+			<create-map :prop="newMapUniverse"></create-map>
 		</div>
-		<create-map :prop="newMapUniverse"></create-map>
-
-		<row-map :proprow="newUniverse"></row-map>
+		
+		<div style="margin-top: 10px;">
+			<row-map :x="0" :proprow="newUniverse"></row-map>
+		</div>
 
 	</div>
 
