@@ -9,15 +9,39 @@ Vue.component('create-map',{
             `
 });
 
+
 Vue.component('universe-map', {
     props: ['propuniverse'],
     template: `
                 <div>
+                    <button id="btn1" v-on:click="changeMap">Nexting ...</button><br>
                     <div v-for="a in 50"  style="float: left;">
                         <row-map :x="a-1" :proprow="propuniverse"></row-map>
                     </div>
                 </div>
-            `
+            `,
+    methods: {
+        changeMap: function () {
+            this.$emit('change');
+        }
+    }
+});
+
+Vue.component('universe-map2', {
+    props: ['propuniverse2'],
+    template: `
+                <div>
+                    <button id="btn2" v-on:click="changeMap2">Nexting ...</button><br>
+                    <div v-for="a in 50"  style="float: left;">
+                        <row-map :x="a-1" :proprow="propuniverse2"></row-map>
+                    </div>
+                </div>
+            `,
+    methods: {
+        changeMap2: function () {
+            this.$emit('change2');
+        }
+    }
 });
 
 Vue.component('row-map', {
@@ -80,8 +104,6 @@ var map = new Vue ({
         isShowCreateMap: true,
         isShowChangeMap: true,
         isShowChangeMap2: false,
-        isShowChildMap: false,
-        isShowChildMap2: false,
         autoclick1: "",
         autoClick2: ""
 
@@ -123,8 +145,6 @@ var map = new Vue ({
             this.isShowChangeMap2 = true;
             this.isShowChangeMap = false;
             this.isShowCreateMap = false;
-            this.isShowChildMap2 = true;
-            this.isShowChildMap = false;
             for (var i = 0 ; i < 50; i++) {
                 for (var j = 0; j < 50; j++) {
                     this.calculateCellState(i, j);
@@ -137,8 +157,6 @@ var map = new Vue ({
             this.isShowChangeMap = true;
             this.isShowChangeMap2 = false;
             this.isShowCreateMap = false;
-            this.isShowChildMap = true;
-            this.isShowChildMap2 = false;
             for (var i = 0 ; i < 50; i++) {
                 for (var j = 0; j < 50; j++) {
                     this.calculateCellState(i, j);
@@ -168,14 +186,14 @@ var map = new Vue ({
     }
 });
 
-// setInterval(function() {
-//     if(document.getElementById('btn1')!== null){
-//         document.getElementById('btn1').click();  
-//     }
+setInterval(function() {
+    if(document.getElementById('btn1')!== null){
+        document.getElementById('btn1').click();  
+    }
     
-// }, 100);
-// setInterval(function() {
-//     if(document.getElementById('btn2')!== null){
-//         document.getElementById('btn2').click();  
-//     }
-// }, 100);
+}, 100);
+setInterval(function() {
+    if(document.getElementById('btn2')!== null){
+        document.getElementById('btn2').click();  
+    }
+}, 100);
