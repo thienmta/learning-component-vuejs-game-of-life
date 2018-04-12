@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="life.css">
+    <script type="text/javascript" src="vue.js"></script>
+</head>
+<body>
+	<div id="map-universe">
+
+		<div>
+			<h1>Map universe</h1>
+		</div>
+		<create-map :prop="newMapUniverse"></create-map>
+
+		<row-map :proprow="newUniverse"></row-map>
+
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src="component.js"></script>
+</body>
+</html>
