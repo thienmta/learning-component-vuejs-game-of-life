@@ -21,7 +21,7 @@ Vue.component('row-map', {
 Vue.component('cell-map', {
     props: ['propcell'],
     template: `
-                <div v-for="i in 70" v-bind:class="'status-' + propcell[i-1]"></div>
+                <div v-bind:class="'status-' + propcell"></div>
             `
 });
 
