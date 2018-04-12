@@ -9,7 +9,6 @@ Vue.component('create-map',{
             `
 });
 
-
 Vue.component('universe-map', {
     props: ['propuniverse'],
     template: `
@@ -103,10 +102,7 @@ var map = new Vue ({
         newUniverse: newmap,
         isShowCreateMap: true,
         isShowChangeMap: true,
-        isShowChangeMap2: false,
-        autoclick1: "",
-        autoClick2: ""
-
+        isShowChangeMap2: false
     },
 
     methods: {
@@ -169,15 +165,6 @@ var map = new Vue ({
     computed: {
         newMapUniverse: function () {
             return this.addNewMap();
-        },
-
-        universeMapNumber: function () {
-            for (var i = 0 ; i < 50; i++) {
-                for (var j = 0; j < 50; j++) {
-                    this.calculateCellState(i, j);
-                }
-            }
-            return this.newUniverse;
         },
 
         ChangenewMapUniverse: function () {
