@@ -8,4 +8,7 @@
 **B5**: choose Stop to stop Auto next map  
   
 **Run auto**  
-**B1**: Run file index.html
+**B1**: Run file index.html  
+
+**Run program code use component parent-child**  
+**B1**: Runfile file component.html

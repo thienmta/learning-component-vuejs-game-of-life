@@ -8,14 +8,16 @@
 </head>
 <body>
 	<div id="map-universe">
-
-		<div>
-			<h1>Map universe</h1>
+		<div style="margin-bottom: 10px;">
+			<div>
+				<h1>Map universe</h1>
+			</div>
+			<create-map v-if="isShowCreateMap" :prop="newMapUniverse"></create-map>
 		</div>
-		<create-map :prop="newMapUniverse"></create-map>
+		
+		<universe-map @change="changeUniverseMapNumber" v-if="isShowChangeMap" :propuniverse="ChangenewMapUniverse"></universe-map>
 
-		<row-map :proprow="newUniverse"></row-map>
-
+		<universe-map2 @change2="changeUniverseMapNumber2" v-if="isShowChangeMap2" :propuniverse2="ChangenewMapUniverse"></universe-map2>
 	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
