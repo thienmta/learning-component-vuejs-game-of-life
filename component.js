@@ -75,32 +75,53 @@ function create () {
             createNewUniverse[i][j] = 0; //Math.round(Math.random());
         }
     }
-    createNewUniverse[9][9] = 1;
-    createNewUniverse[9][10] = 1;
-    createNewUniverse[9][11] = 1;
-    createNewUniverse[9][12] = 1;
-    createNewUniverse[9][13] = 1;
-    createNewUniverse[9][14] = 1;
-    createNewUniverse[9][15] = 1;
-    createNewUniverse[9][16] = 1;
-    createNewUniverse[11][9] = 1;
-    createNewUniverse[11][10] = 1;
-    createNewUniverse[11][11] = 1;
-    createNewUniverse[11][12] = 1;
-    createNewUniverse[11][13] = 1;
-    createNewUniverse[11][14] = 1;
-    createNewUniverse[11][15] = 1;
-    createNewUniverse[11][16] = 1;
-    createNewUniverse[10][9] = 1;
-    createNewUniverse[10][16] = 1;
-    createNewUniverse[10][11] = 1;
-    createNewUniverse[10][12] = 1;
-    createNewUniverse[10][13] = 1;
-    createNewUniverse[10][14] = 1;
+    createNewUniverse[1][5] = 1;
+    createNewUniverse[1][6] = 1;
+    createNewUniverse[2][5] = 1;
+    createNewUniverse[2][6] = 1;
 
-    createNewUniverse[40][30] = 1;
-    createNewUniverse[40][31] = 1;
-    createNewUniverse[40][32] = 1;
+    createNewUniverse[11][5] = 1;
+    createNewUniverse[11][6] = 1;
+    createNewUniverse[11][7] = 1;
+
+    createNewUniverse[12][4] = 1;
+    createNewUniverse[13][3] = 1;
+    createNewUniverse[14][3] = 1;
+
+    createNewUniverse[12][8] = 1;
+    createNewUniverse[13][9] = 1;
+    createNewUniverse[14][9] = 1;
+
+    createNewUniverse[15][6] = 1;
+
+    createNewUniverse[16][4] = 1;
+    createNewUniverse[16][8] = 1;
+
+    createNewUniverse[17][5] = 1;
+    createNewUniverse[17][6] = 1;
+    createNewUniverse[17][7] = 1;
+
+    createNewUniverse[18][6] = 1;
+
+    createNewUniverse[22][3] = 1;
+    createNewUniverse[22][4] = 1;
+    createNewUniverse[22][5] = 1;
+    createNewUniverse[21][3] = 1;
+    createNewUniverse[21][4] = 1;
+    createNewUniverse[21][5] = 1;
+
+    createNewUniverse[23][2] = 1;
+    createNewUniverse[23][6] = 1;
+
+    createNewUniverse[25][1] = 1;
+    createNewUniverse[25][2] = 1;
+    createNewUniverse[25][6] = 1;
+    createNewUniverse[25][7] = 1;
+
+    createNewUniverse[36][3] = 1;
+    createNewUniverse[36][4] = 1;
+    createNewUniverse[35][3] = 1;
+    createNewUniverse[35][4] = 1;
     return createNewUniverse;
 }
 
@@ -175,4 +196,4 @@ setInterval(function() {
         document.getElementById('btn1').click();  
     }
     
-}, 300);
+}, 100);
