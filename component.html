@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,12 +13,9 @@
 			<div>
 				<h1>Map universe</h1>
 			</div>
-			<create-map v-if="isShowCreateMap" :prop="newMapUniverse"></create-map>
 		</div>
 		
-		<universe-map @change="changeUniverseMapNumber" v-if="isShowChangeMap" :propuniverse="ChangenewMapUniverse"></universe-map>
-
-		<universe-map2 @change2="changeUniverseMapNumber2" v-if="isShowChangeMap2" :propuniverse2="ChangenewMapUniverse"></universe-map2>
+		<universe-map @change="changeUniverseMapNumber" :propuniverse="ChangenewMapUniverse"></universe-map>
 	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

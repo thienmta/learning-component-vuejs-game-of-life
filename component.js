@@ -1,14 +1,3 @@
-Vue.component('create-map',{
-    props: ['prop'],
-    template:`
-                <div>
-                    <div v-for="(item, index) in prop">
-                        <div v-for="i in 50" v-bind:class="'status-' + item[i-1]"></div>
-                    </div>
-                </div>
-            `
-});
-
 Vue.component('universe-map', {
     props: ['propuniverse'],
     template: `
@@ -22,23 +11,6 @@ Vue.component('universe-map', {
     methods: {
         changeMap: function () {
             this.$emit('change');
-        }
-    }
-});
-
-Vue.component('universe-map2', {
-    props: ['propuniverse2'],
-    template: `
-                <div>
-                    <button id="btn2" v-on:click="changeMap2">Nexting ...</button><br>
-                    <div v-for="a in 50"  style="float: left;">
-                        <row-map :x="a-1" :proprow="propuniverse2"></row-map>
-                    </div>
-                </div>
-            `,
-    methods: {
-        changeMap2: function () {
-            this.$emit('change2');
         }
     }
 });
@@ -95,26 +67,28 @@ Vue.component('cell-map', {
             `
 });
 
-var newmap = [];
+var createNewUniverse = [];
+function create () {
+    for (var i = 0 ; i < 50; i++) {
+        createNewUniverse[i] = [];
+        for (var j = 0; j < 50; j++) {
+            createNewUniverse[i][j] = 0; //Math.round(Math.random());
+        }
+    }
+    createNewUniverse[1][1] = 1;
+    createNewUniverse[1][2] = 1;
+    createNewUniverse[1][3] = 1;
+    return createNewUniverse;
+}
+
+var newmap = create();
 var map = new Vue ({
     el: '#map-universe',
     data: {
-        newUniverse: newmap,
-        isShowCreateMap: true,
-        isShowChangeMap: true,
-        isShowChangeMap2: false
+        newUniverse: newmap
     },
 
     methods: {
-        addNewMap: function() {
-            for (var i = 0 ; i < 50; i++) {
-                this.newUniverse[i] = [];
-                for (var j = 0; j < 50; j++) {
-                    this.newUniverse[i][j] = Math.round(Math.random());
-                }
-            }
-            return this.newUniverse;
-        },
 
         getValueOfCell: function (x, y) {
             if (x < 0 || x >= 50 || y < 0 || y >= 50) {
@@ -130,45 +104,45 @@ var map = new Vue ({
         },
 
         calculateCellState: function (i, j) {
-            if (this.countNeighborPlanet(i, j) < 2 || this.countNeighborPlanet(i, j) > 3) {
-                this.newUniverse[i][j] = 0;
-            } else if (this.countNeighborPlanet(i, j) == 3) {
-                this.newUniverse[i][j] = 1;
+            var x = 0;
+            if(this.newUniverse[i][j] == 0) {
+                if (this.countNeighborPlanet(i, j) < 2 || this.countNeighborPlanet(i, j) > 3) {
+                    x = 0;
+                } else if (this.countNeighborPlanet(i, j) == 3) {
+                    x = 1;
+                } else if (this.countNeighborPlanet(i, j) == 2) {
+                    x = 0;
+                }
             }
+
+            else if(this.newUniverse[i][j] == 1) {
+                if (this.countNeighborPlanet(i, j) < 2 || this.countNeighborPlanet(i, j) > 3) {
+                    x = 0;
+                } else if (this.countNeighborPlanet(i, j) == 3) {
+                    x = 1;
+                } else if (this.countNeighborPlanet(i, j) == 2) {
+                    x = 1;
+                }
+            }
+
+            return x;
         },
 
         changeUniverseMapNumber: function () {
-            this.isShowChangeMap2 = true;
-            this.isShowChangeMap = false;
-            this.isShowCreateMap = false;
+            var changeUniverse = [];
             for (var i = 0 ; i < 50; i++) {
+                changeUniverse[i] = [];
                 for (var j = 0; j < 50; j++) {
-                    this.calculateCellState(i, j);
+                    changeUniverse[i][j] = this.calculateCellState(i, j);
                 }
             }
-            return this.newUniverse;
-        },
-
-        changeUniverseMapNumber2: function () {
-            this.isShowChangeMap = true;
-            this.isShowChangeMap2 = false;
-            this.isShowCreateMap = false;
-            for (var i = 0 ; i < 50; i++) {
-                for (var j = 0; j < 50; j++) {
-                    this.calculateCellState(i, j);
-                }
-            }
-            return this.newUniverse;
+            this.newUniverse = changeUniverse;
         }
     },
 
     computed: {
-        newMapUniverse: function () {
-            return this.addNewMap();
-        },
-
         ChangenewMapUniverse: function () {
-            return this.changeUniverseMapNumber();
+            return this.newUniverse;
         }
     }
 });
@@ -178,9 +152,4 @@ setInterval(function() {
         document.getElementById('btn1').click();  
     }
     
-}, 100);
-setInterval(function() {
-    if(document.getElementById('btn2')!== null){
-        document.getElementById('btn2').click();  
-    }
 }, 100);
