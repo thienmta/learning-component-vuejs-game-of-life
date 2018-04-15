@@ -75,9 +75,32 @@ function create () {
             createNewUniverse[i][j] = 0; //Math.round(Math.random());
         }
     }
-    createNewUniverse[1][1] = 1;
-    createNewUniverse[1][2] = 1;
-    createNewUniverse[1][3] = 1;
+    createNewUniverse[9][9] = 1;
+    createNewUniverse[9][10] = 1;
+    createNewUniverse[9][11] = 1;
+    createNewUniverse[9][12] = 1;
+    createNewUniverse[9][13] = 1;
+    createNewUniverse[9][14] = 1;
+    createNewUniverse[9][15] = 1;
+    createNewUniverse[9][16] = 1;
+    createNewUniverse[11][9] = 1;
+    createNewUniverse[11][10] = 1;
+    createNewUniverse[11][11] = 1;
+    createNewUniverse[11][12] = 1;
+    createNewUniverse[11][13] = 1;
+    createNewUniverse[11][14] = 1;
+    createNewUniverse[11][15] = 1;
+    createNewUniverse[11][16] = 1;
+    createNewUniverse[10][9] = 1;
+    createNewUniverse[10][16] = 1;
+    createNewUniverse[10][11] = 1;
+    createNewUniverse[10][12] = 1;
+    createNewUniverse[10][13] = 1;
+    createNewUniverse[10][14] = 1;
+
+    createNewUniverse[40][30] = 1;
+    createNewUniverse[40][31] = 1;
+    createNewUniverse[40][32] = 1;
     return createNewUniverse;
 }
 
@@ -152,4 +175,4 @@ setInterval(function() {
         document.getElementById('btn1').click();  
     }
     
-}, 100);
+}, 300);
